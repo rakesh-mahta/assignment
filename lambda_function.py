@@ -26,7 +26,7 @@ def lambda_handler(event, context):
         for tag in instance.tags:
             if 'Name'in tag['Key']:
                 name = tag['Value']
-    # Add instance info to a dictionary         
+        # Add instance info to a dictionary         
         ec2info[instance.id] = {
             'Name': name,
             'Type': instance.instance_id
@@ -34,7 +34,7 @@ def lambda_handler(event, context):
         L.append(name)
         M.append(instance.instance_id)
 
-# Format output in table from
+    # Format output in table from
 
     table = PrettyTable(['Name Tag', 'Instance ID'])
     for i in range(len(L)):

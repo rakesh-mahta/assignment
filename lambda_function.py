@@ -11,11 +11,11 @@ def lambda_handler(event, context):
         running_instances = ec2.instances.filter(
     Filters=[{
         'Name': 'instance-type',
-        'Values': ['t2.micro']
+        'Values': ['m5.large']
         },
         {
         'Name': 'vpc-id',
-        'Values': ['vpc-1930977e']
+        'Values': ['<default-vpc-id>']
         }]
     )
 
